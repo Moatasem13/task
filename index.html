@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>    <h1>Enter a number</h1></center>
+        <center> <input id="i" type="text" ><button onclick="myfunc()">submit</button> </center>
+        
+        <center> <p id="p1"></p></center>
+        <script>
+            function myfunc(){
+                const message=document.getElementById("p1");
+                message.innerHTML="";
+                let p1 =document.getElementById("i").value;
+        try { 
+             if(p1.trim()=="")throw"empty";
+               if(isNaN(p1)) throw"not a number";
+
+            
+            p1=Number(p1);
+            if(p1>5) throw "high";
+            if (p1<5) throw"low";
+        
+        } catch  (error) {
+            message.innerHTML="the output = "+error;
+        }
+            }
+        </script>
+        <style>
+            *{
+    background-color: darkslategray;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+input {
+    background-color: white;
+    border-radius: 10%;
+    border-style: double;
+    border-color: black;
+    border-width: 5px;
+}
+button{
+    width: 75px;
+    height: 40px;
+    padding: 0px;
+    color: #fff;
+    background: rgb(11, 11, 11);
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button:hover {
+    background: rgba(31, 17, 17, 0.76);
+    transition: 0.4s;
+    scale: 1.1;
+}
+        </style>
+    </body>
+</html>
